@@ -46,6 +46,14 @@ namespace Examen_final
                     $"Calificacion: {alumno.Calificacion}"); ;
             }
         }
+        public static Alumno obtenerAlumno(String dni)
+        {
+            return alumnos.Find(a => a.DNI == dni);
+        }
+        internal static void eliminarAlumno(Alumno alumno)
+        {
+                alumnos.Remove(alumno);
+        }
     }
     
 }
