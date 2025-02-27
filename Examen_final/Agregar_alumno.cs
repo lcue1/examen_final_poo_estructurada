@@ -15,6 +15,7 @@ namespace Examen_final
         public Agregar_alumno()
         {
             InitializeComponent();
+
         }
 
         private void Agregar_alumno_Load(object sender, EventArgs e)
@@ -27,13 +28,29 @@ namespace Examen_final
             try
             {
 
-                //Obtengo informacion
-                String dni = dni_alumno.ToString();
-                String apellido = apellido_alumno.ToString();
-                String nombre = nombre_alumno.ToString();
-                int nota = int.Parse(nota_alumno.ToString());
 
-            }catch(Exception ex)
+                // Obtengo información de los TextBox
+                String dni = dni_alumno.Text; // Antes usabas dni_alumno.ToString()
+                if (Crud_calificaciones.existeAlumno(dni))
+                {
+                    MessageBox.Show("El alumno ya existe","Atencion");
+                    return;
+                }
+                String apellido = apellido_alumno.Text;
+                String nombre = nombre_alumno.Text;
+                int nota = int.Parse(nota_alumno.Text); // Convierte correctamente el string a int
+
+
+                // Creo el objeto Alumno
+                Alumno alumno = new Alumno(dni, apellido, nombre, nota);
+
+                // Agrego el alumno a la lista estática
+                Crud_calificaciones.agregarAlumno(alumno);
+
+                MessageBox.Show("Alumno agregado", "Éxito");
+
+            }
+            catch(Exception ex)
             {
                 MessageBox.Show("Informacion invalida","Error");
             }
