@@ -30,22 +30,7 @@ namespace Examen_final
             return alumnos.Find(alumno => alumno.DNI == DNIAlumno)==null?false:true;
         }
 
-        public static void buscarAlumnoPorDNI(string DNIAlumno)
-        {
-            Alumno alumno = alumnos.Find(a => a.DNI == DNIAlumno);
-            if (alumno == null)
-            {
-                MessageBox.Show("El alumno no existe"); ;
-            }
-            else
-            {
-                MessageBox.Show($"DNI: {alumno.DNI}\n" +
-                    $"Apellido: {alumno.Apellido}" +
-                    $"Nombre: {alumno.Nombre}\n" +
-                    $"Nota: {alumno.Nota}\n" +
-                    $"Calificacion: {alumno.Calificacion}"); ;
-            }
-        }
+
         public static Alumno obtenerAlumno(String dni)
         {
             return alumnos.Find(a => a.DNI == dni);
@@ -53,6 +38,15 @@ namespace Examen_final
         internal static void eliminarAlumno(Alumno alumno)
         {
                 alumnos.Remove(alumno);
+        }
+
+        internal static void actualizarAlumno(String dniAEditar, Alumno alumno)
+        {
+            Alumno alumnoBuscado = obtenerAlumno(dniAEditar);
+            alumnos.Remove(alumnoBuscado);//slimina de la lista
+            alumnos.Add(alumno);//agrega a la lista el actualizado
+            
+            
         }
     }
     

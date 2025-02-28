@@ -52,11 +52,11 @@ namespace Examen_final
             String dniAlumno = buscar_editar_eliminar_btn.Text;
             if (Crud_calificaciones.obtenerAlumno(dniAlumno)==null)//no existe alumno en la lista
             {//muestra mensaje
-                MessageBox.Show("El alumno no existe","Atencion",MessageBoxButtons.OK,MessageBoxIcon.Error); 
+                mostrarMensajeError(dniAlumno);
                 return;
             }
             
-            new Editar_alumno(dniAlumno).Show();//abre formulario
+            new Editar_alumno(dniAlumno).Show();//abre formulario y le paso un parametro  con el dni
             
         }
 
@@ -68,7 +68,25 @@ namespace Examen_final
         private void buscar_alumno_btn_Click(object sender, EventArgs e)
         {
             String dniAlumno = buscar_editar_eliminar_btn.Text;
-            Crud_calificaciones.buscarAlumnoPorDNI(dniAlumno);
+
+            Alumno alumnoBuscado = Crud_calificaciones.obtenerAlumno(dniAlumno);
+
+            if (alumnoBuscado==null)
+            {
+                mostrarMensajeError(dniAlumno);
+            }
+            else
+            {
+                MessageBox.Show($"DNI: {alumnoBuscado.DNI}\n" +
+                $"Apellido: {alumnoBuscado.Apellido}\n" +
+                $"Nombre: {alumnoBuscado.Nombre}\n" +
+                $"Nota: {alumnoBuscado.Nota}\n" +
+                $"Calificación: {alumnoBuscado.Calificacion}",
+                "Información del Alumno",
+                MessageBoxButtons.OK,
+                MessageBoxIcon.Information);
+            }
+
         }
 
         private void eliminar_alumno_btn_Click(object sender, EventArgs e)
@@ -78,7 +96,7 @@ namespace Examen_final
             Alumno alumno = Crud_calificaciones.obtenerAlumno(dniAlumno);//busco alumno
             if (alumno == null)
             {
-                MessageBox.Show($"El alumno con DNI: {dniAlumno} no existe", "Atencion", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                mostrarMensajeError(dniAlumno);
                 return;
             }
             String mensaje = $"Desea eliminar al alumno:\n" +
@@ -92,6 +110,11 @@ namespace Examen_final
             {
                 Crud_calificaciones.eliminarAlumno(alumno);
             }
+        }
+
+        private void mostrarMensajeError(String dni)
+        {
+            MessageBox.Show($"El alumno con DNI: {dni} no existe", "Atencion", MessageBoxButtons.OK, MessageBoxIcon.Warning);
         }
     }
 }
