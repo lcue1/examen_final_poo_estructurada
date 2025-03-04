@@ -47,19 +47,20 @@
             this.Editar.Location = new System.Drawing.Point(70, 25);
             this.Editar.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.Editar.Name = "Editar";
-            this.Editar.Size = new System.Drawing.Size(176, 29);
+            this.Editar.Size = new System.Drawing.Size(82, 29);
             this.Editar.TabIndex = 19;
-            this.Editar.Text = "Editar Alumno";
+            this.Editar.Text = "Editar";
             // 
             // editar_alumno_btn
             // 
+            this.editar_alumno_btn.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.editar_alumno_btn.Location = new System.Drawing.Point(186, 476);
             this.editar_alumno_btn.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.editar_alumno_btn.Name = "editar_alumno_btn";
             this.editar_alumno_btn.Size = new System.Drawing.Size(86, 49);
             this.editar_alumno_btn.TabIndex = 18;
             this.editar_alumno_btn.Text = "Editar";
-            this.editar_alumno_btn.UseVisualStyleBackColor = true;
+            this.editar_alumno_btn.UseVisualStyleBackColor = false;
             this.editar_alumno_btn.Click += new System.EventHandler(this.editar_alumno_btn_Click);
             // 
             // label4
@@ -156,7 +157,7 @@
             this.Controls.Add(this.dni_alumno_editar);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ForeColor = System.Drawing.Color.MidnightBlue;
-            this.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.Margin = new System.Windows.Forms.Padding(5);
             this.Name = "Editar_alumno";
             this.Text = "Editar alumno";
             this.Load += new System.EventHandler(this.Form2_Load);

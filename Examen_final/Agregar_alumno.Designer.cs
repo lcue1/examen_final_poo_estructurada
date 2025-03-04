@@ -118,13 +118,14 @@
             // 
             // agregar_alumno_btn
             // 
+            this.agregar_alumno_btn.BackColor = System.Drawing.Color.Gainsboro;
             this.agregar_alumno_btn.Location = new System.Drawing.Point(145, 430);
             this.agregar_alumno_btn.Margin = new System.Windows.Forms.Padding(2);
             this.agregar_alumno_btn.Name = "agregar_alumno_btn";
             this.agregar_alumno_btn.Size = new System.Drawing.Size(78, 41);
             this.agregar_alumno_btn.TabIndex = 8;
             this.agregar_alumno_btn.Text = "Agregar";
-            this.agregar_alumno_btn.UseVisualStyleBackColor = true;
+            this.agregar_alumno_btn.UseVisualStyleBackColor = false;
             this.agregar_alumno_btn.Click += new System.EventHandler(this.agregar_alumno_btn_Click);
             // 
             // label5

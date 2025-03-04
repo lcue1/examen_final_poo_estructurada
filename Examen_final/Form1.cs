@@ -116,5 +116,46 @@ namespace Examen_final
         {
             MessageBox.Show($"El alumno con DNI: {dni} no existe", "Atencion", MessageBoxButtons.OK, MessageBoxIcon.Warning);
         }
+
+        private void alumnosSuspensos_btn_Click(object sender, EventArgs e)
+        {
+            List<Alumno> suspensos = Crud_calificaciones.obtenerSuspensos();
+            if (suspensos.Count == 0)
+            {
+                MessageBox.Show("No hay registros", "Alumnos suspensos", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+            String mensaje = "Suspendidos\n";
+            foreach(Alumno a in suspensos)
+            {
+                mensaje += generarMensaje("Suspendidos", a.DNI, a.Apellido, a.Nombre, a.Nota.ToString(), a.Calificacion);
+
+            }
+            MessageBox.Show(mensaje,"Alumnos suspensos",MessageBoxButtons.OK,MessageBoxIcon.Information);
+        }
+
+        private String generarMensaje(String titulo,String dni,String apellido, String nombre, String nota, String calificacion)
+        {
+            return $"DNI : {dni} Apellido : {apellido} Nombre: {nombre} Nota: {nota}  Calificacion: {calificacion}\n";
+        }
+
+        private void alumnosAprobado_btn_Click(object sender, EventArgs e)
+        {
+
+            List<Alumno> aprobados = Crud_calificaciones.obtenerAprobados();
+            if (aprobados.Count == 0)
+            {
+                MessageBox.Show("No hay registros", "Alumnos aprobados", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+            String mensaje = "Suspendidos\n";
+            foreach (Alumno a in aprobados)
+            {
+                mensaje += generarMensaje("Suspendidos", a.DNI, a.Apellido, a.Nombre, a.Nota.ToString(), a.Calificacion);
+
+            }
+            MessageBox.Show(mensaje, "Alumnos suspensos", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+        }
     }
 }

@@ -38,36 +38,41 @@
             this.buscar_alumno_btn = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
+            this.alumnosSuspensos_btn = new System.Windows.Forms.Button();
+            this.alumnosAprobado_btn = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // mostrar_alumnos
             // 
-            this.mostrar_alumnos.Location = new System.Drawing.Point(67, 110);
+            this.mostrar_alumnos.BackColor = System.Drawing.SystemColors.ScrollBar;
+            this.mostrar_alumnos.Location = new System.Drawing.Point(65, 174);
             this.mostrar_alumnos.Name = "mostrar_alumnos";
             this.mostrar_alumnos.Size = new System.Drawing.Size(151, 27);
             this.mostrar_alumnos.TabIndex = 0;
             this.mostrar_alumnos.Text = "Mostrar alumnos";
-            this.mostrar_alumnos.UseVisualStyleBackColor = true;
+            this.mostrar_alumnos.UseVisualStyleBackColor = false;
             this.mostrar_alumnos.Click += new System.EventHandler(this.mostrar_alumnos_Click);
             // 
             // introducir_alumno
             // 
-            this.introducir_alumno.Location = new System.Drawing.Point(67, 157);
+            this.introducir_alumno.BackColor = System.Drawing.SystemColors.ScrollBar;
+            this.introducir_alumno.Location = new System.Drawing.Point(67, 113);
             this.introducir_alumno.Name = "introducir_alumno";
             this.introducir_alumno.Size = new System.Drawing.Size(149, 26);
             this.introducir_alumno.TabIndex = 1;
             this.introducir_alumno.Text = "Introducir alumno";
-            this.introducir_alumno.UseVisualStyleBackColor = true;
+            this.introducir_alumno.UseVisualStyleBackColor = false;
             this.introducir_alumno.Click += new System.EventHandler(this.introducir_alumno_Click);
             // 
             // editar_alumno_btn
             // 
+            this.editar_alumno_btn.BackColor = System.Drawing.Color.LightGray;
             this.editar_alumno_btn.Location = new System.Drawing.Point(267, 354);
             this.editar_alumno_btn.Name = "editar_alumno_btn";
             this.editar_alumno_btn.Size = new System.Drawing.Size(110, 31);
             this.editar_alumno_btn.TabIndex = 3;
             this.editar_alumno_btn.Text = "Editar";
-            this.editar_alumno_btn.UseVisualStyleBackColor = true;
+            this.editar_alumno_btn.UseVisualStyleBackColor = false;
             this.editar_alumno_btn.Click += new System.EventHandler(this.editar_eliminar_alumno_Click);
             // 
             // buscar_editar_eliminar_btn
@@ -80,12 +85,13 @@
             // 
             // eliminar_alumno_btn
             // 
+            this.eliminar_alumno_btn.BackColor = System.Drawing.Color.LightGray;
             this.eliminar_alumno_btn.Location = new System.Drawing.Point(478, 354);
             this.eliminar_alumno_btn.Name = "eliminar_alumno_btn";
             this.eliminar_alumno_btn.Size = new System.Drawing.Size(110, 31);
             this.eliminar_alumno_btn.TabIndex = 5;
             this.eliminar_alumno_btn.Text = "Eliminar";
-            this.eliminar_alumno_btn.UseVisualStyleBackColor = true;
+            this.eliminar_alumno_btn.UseVisualStyleBackColor = false;
             this.eliminar_alumno_btn.Click += new System.EventHandler(this.eliminar_alumno_btn_Click);
             // 
             // label1
@@ -113,12 +119,13 @@
             // 
             // buscar_alumno_btn
             // 
+            this.buscar_alumno_btn.BackColor = System.Drawing.Color.LightGray;
             this.buscar_alumno_btn.Location = new System.Drawing.Point(75, 354);
             this.buscar_alumno_btn.Name = "buscar_alumno_btn";
             this.buscar_alumno_btn.Size = new System.Drawing.Size(110, 31);
             this.buscar_alumno_btn.TabIndex = 8;
             this.buscar_alumno_btn.Text = "Buscar";
-            this.buscar_alumno_btn.UseVisualStyleBackColor = true;
+            this.buscar_alumno_btn.UseVisualStyleBackColor = false;
             this.buscar_alumno_btn.Click += new System.EventHandler(this.buscar_alumno_btn_Click);
             // 
             // label3
@@ -144,12 +151,36 @@
             this.label4.TabIndex = 10;
             this.label4.Text = "Opciones";
             // 
+            // alumnosSuspensos_btn
+            // 
+            this.alumnosSuspensos_btn.BackColor = System.Drawing.SystemColors.ScrollBar;
+            this.alumnosSuspensos_btn.Location = new System.Drawing.Point(371, 113);
+            this.alumnosSuspensos_btn.Name = "alumnosSuspensos_btn";
+            this.alumnosSuspensos_btn.Size = new System.Drawing.Size(177, 26);
+            this.alumnosSuspensos_btn.TabIndex = 11;
+            this.alumnosSuspensos_btn.Text = "Alumnos suspensos";
+            this.alumnosSuspensos_btn.UseVisualStyleBackColor = false;
+            this.alumnosSuspensos_btn.Click += new System.EventHandler(this.alumnosSuspensos_btn_Click);
+            // 
+            // alumnosAprobado_btn
+            // 
+            this.alumnosAprobado_btn.BackColor = System.Drawing.SystemColors.ScrollBar;
+            this.alumnosAprobado_btn.Location = new System.Drawing.Point(361, 175);
+            this.alumnosAprobado_btn.Name = "alumnosAprobado_btn";
+            this.alumnosAprobado_btn.Size = new System.Drawing.Size(177, 26);
+            this.alumnosAprobado_btn.TabIndex = 12;
+            this.alumnosAprobado_btn.Text = "Mostrar aprobados";
+            this.alumnosAprobado_btn.UseVisualStyleBackColor = false;
+            this.alumnosAprobado_btn.Click += new System.EventHandler(this.alumnosAprobado_btn_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.ClientSize = new System.Drawing.Size(624, 450);
+            this.Controls.Add(this.alumnosAprobado_btn);
+            this.Controls.Add(this.alumnosSuspensos_btn);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.buscar_alumno_btn);
@@ -182,6 +213,8 @@
         private System.Windows.Forms.Button buscar_alumno_btn;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Button alumnosSuspensos_btn;
+        private System.Windows.Forms.Button alumnosAprobado_btn;
     }
 }
 

@@ -67,6 +67,13 @@ namespace Examen_final
                 return;
              }
 
+            if (!Utilidades.validarNota(nota.Text))//valido nota
+            {
+                MessageBox.Show($"La nota {nota.Text} es invalida.\n" +
+                    $"Solo se permiten notas del 0 al 10 ", "Alerta!!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+
+            }
 
             Alumno alumno = new Alumno(nuevoDni.Text,apellido.Text,nombre.Text,int.Parse(nota.Text));
             Crud_calificaciones.actualizarAlumno(dniAEditar,alumno);

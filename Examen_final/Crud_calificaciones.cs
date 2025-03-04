@@ -48,6 +48,16 @@ namespace Examen_final
             
             
         }
+
+        internal static List<Alumno> obtenerSuspensos()
+        {
+            return alumnos.FindAll(a => a.Calificacion.Equals("SS"));
+        }
+
+        internal static List<Alumno> obtenerAprobados()
+        {
+            return alumnos.FindAll(a => a.Nota>=7);
+        }
     }
     
 }
